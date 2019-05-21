@@ -18,7 +18,7 @@ namespace _4_Conversões
             int salarioEmInteiro = (int)salario;
             long idade = 130000000000000;
             short quantidadeDeProdutos = 15000;
-            float altura = 1.70f;
+            float altura = 3.141592f;
 
             Console.WriteLine("Executando projeto 4");
             Console.WriteLine(salarioEmInteiro);
