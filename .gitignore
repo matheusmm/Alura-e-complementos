@@ -1,0 +1,17 @@
+#Don't track these folders
+bin/
+obj/
+Properties/
+
+#types of files
+.csproj
+.config
+/T1/AprendendoCSharp/.vs/AprendendoCSharp/v15
+/T1/AprendendoCSharp
+*.config
+*.csproj
+*.txt
+*.exe
+/T1/ByteBank/.vs/ByteBank/v15
+*.sln
+/.gitattributes
