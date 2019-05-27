@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Autenticavel
+    public class Diretor : FuncionarioAutenticavel
     {
        
-        public Autenticavel (string cpf) : base(5000, cpf)
+        public Diretor (string cpf) : base(5000, cpf)
         {
             Console.WriteLine("Criando DIRETOR");
         }

@@ -7,25 +7,8 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Sistemas
 {
-    public abstract class Autenticavel : Funcionario
+    public interface IAutenticavel
     {
-        public Autenticavel(double salario , string cpf) : base(salario, cpf)
-        {
-        }
-        public string Senha { get; set; }
-
-        public bool Autenticar(string senha)
-        {
-            return Senha == senha;
-        }
-       public override void AumentarSalario()
-    {
-        Salario *= 1.05;
+        bool Autenticar(string senha);
     }
-
-    public override double GetBonificacao()
-    {
-        return Salario * 0.25;
-    }
-}
 }
