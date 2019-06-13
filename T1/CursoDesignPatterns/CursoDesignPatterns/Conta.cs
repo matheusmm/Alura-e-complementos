@@ -9,12 +9,23 @@ namespace CursoDesignPatterns
     public class Conta
     {
         public string Agencia { get; private set; }
-        public double Saldo { get; private set; }
+        public double Saldo { get; set; }
         public string Titular { get; private set; }
         public string NConta { get; private set; }
         public DateTime DataCriacao { get; private set; }
 
-        public void NovaConta(double valor, DateTime DataAUsar)
+        public EstadoDaConta Estado;
+
+        public void Saca(double valor)
+        {
+            Estado.Saca(this, valor);
+        }
+        public void Deposita(double valor)
+        {
+            Estado.Deposita(this, valor);
+        }
+    
+    public void NovaConta(double valor, DateTime DataAUsar)
         {
             this.Saldo = valor;
             this.DataCriacao = DataAUsar;
@@ -25,15 +36,14 @@ namespace CursoDesignPatterns
             this.Saldo += valor;
         }
     }
-    enum Formato { XML, CSV, PORCENTO}
+    enum Formato { XML, CSV, PORCENTO }
 
     class Requisicao
     {
         public Formato Formato { get; private set; }
-        public Requisicao (Formato formato)
+        public Requisicao(Formato formato)
         {
             this.Formato = formato;
         }
     }
-
 }

@@ -10,17 +10,17 @@ namespace CursoDesignPatterns
     {
         static void Main(string[] args)
         {
-            CalculadorDeDescontos calculador = new CalculadorDeDescontos();
+            NotaFiscalBuilder builder = new NotaFiscalBuilder();
+            builder.AdicionaAcao(new Multiplica(2));
+            builder.AdicionaAcao(new Multiplica(3));
+            builder.AdicionaAcao(new Multiplica(5.5));
 
-            Orcamento orcamento = new Orcamento(500);
-            orcamento.AdicionaItem(new Item("Mochila", 250.00));
-            orcamento.AdicionaItem(new Item("Cadeira", 235.00));
-            orcamento.AdicionaItem(new Item("Lápis", 5));
-            orcamento.AdicionaItem(new Item("Apagador",5));
-            orcamento.AdicionaItem(new Item("Caneta", 5));
-
-            double desconto = calculador.Calcula(orcamento);
-            Console.WriteLine(desconto);
+            NotaFiscal notaFiscal = builder.Empresa("Caelum")
+                .UsarCnpj("123.456.789/0001-10")
+                .ComItem(new ItemDaNota("item 1", 100.0))
+                .ComItem(new ItemDaNota("item 2", 200.0))
+                .ComItem(new ItemDaNota("item 3", 300.0))
+                .Constroi();
 
             Console.ReadKey();
         }
